@@ -1,0 +1,9 @@
+# role: sensor
+user thermo01
+topic write home/livingroom/temp
+topic write home/security/alerts/thermo01
+
+# role: admin/monitor
+user admin01
+topic read home/#
+topic write home/frontdoor/lock

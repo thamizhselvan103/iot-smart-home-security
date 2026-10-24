@@ -1,0 +1,3 @@
+alert tcp 10.10.10.0/24 any -> any any (msg:"LAB IoT port scan detected"; flags:S,12; detection_filter:track by_src, count 10, seconds 5; classtype:attempted-recon; sid:1000001; rev:1;)
+alert tcp 10.10.10.0/24 any -> any 22 (msg:"LAB SSH attempt from IoT segment"; flags:S,12; classtype:attempted-admin; sid:1000002; rev:1;)
+alert tcp 10.10.10.0/24 any -> any 1883 (msg:"LAB plaintext MQTT attempt, TLS required"; flags:S,12; classtype:policy-violation; sid:1000003; rev:1;)
